@@ -1,28 +1,18 @@
-import "dvd" -- DEMO
-local dvd = dvd(1, -1) -- DEMO
+import 'libraries/noble/Noble'
 
-local gfx <const> = playdate.graphics
-local font = gfx.font.new('font/Mini Sans 2X') -- DEMO
+-- import 'utilities/Utilities'
 
-local function loadGame()
-	playdate.display.setRefreshRate(50) -- Sets framerate to 50 fps
-	math.randomseed(playdate.getSecondsSinceEpoch()) -- seed for math.random
-	gfx.setFont(font) -- DEMO
-end
+import 'scenes/ExampleScene'
+import 'scenes/ExampleScene2'
 
-local function updateGame()
-	dvd:update() -- DEMO
-end
+Noble.Settings.setup({
+	Difficulty = "Medium"
+})
 
-local function drawGame()
-	gfx.clear() -- Clears the screen
-	dvd:draw() -- DEMO
-end
+Noble.GameData.setup({
+	Score = 0
+})
 
-loadGame()
+Noble.showFPS = true
 
-function playdate.update()
-	updateGame()
-	drawGame()
-	playdate.drawFPS(0,0) -- FPS widget
-end
+Noble.new(ExampleScene, 1.5, Noble.TransitionType.CROSS_DISSOLVE)
