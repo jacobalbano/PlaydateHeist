@@ -1,9 +1,10 @@
 import 'libraries/noble/Noble'
+import 'scenes/MainMenuScene'
+import 'scenes/LockpickScene'
 
--- import 'utilities/Utilities'
+import 'libraries/thuglife/Math'
 
-import 'scenes/ExampleScene'
-import 'scenes/ExampleScene2'
+playdate.setCrankSoundsDisabled(true)
 
 Noble.Settings.setup({
 	Difficulty = "Medium"
@@ -15,4 +16,4 @@ Noble.GameData.setup({
 
 Noble.showFPS = true
 
-Noble.new(ExampleScene, 1.5, Noble.TransitionType.CROSS_DISSOLVE)
+Noble.new(LockpickScene, 1.5, Noble.TransitionType.CROSS_DISSOLVE, true)

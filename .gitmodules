@@ -1,3 +1,6 @@
 [submodule "source/libraries/noble"]
 	path = source/libraries/noble
 	url = https://github.com/NobleRobot/NobleEngine.git
+[submodule "source/libraries/thuglife"]
+	path = source/libraries/thuglife
+	url = https://github.com/jacobalbano/Thuglife.git
